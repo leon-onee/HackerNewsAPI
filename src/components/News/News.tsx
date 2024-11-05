@@ -10,9 +10,9 @@ const News = () => {
 		(state: RootState) => state.filter.currentFilter
 	)
 
-	const { data, error, isLoading, refetch } = useGetNewsQuery(currentFilter.query, {
-		// pollingInterval: 60000,
-		// skipPollingIfUnfocused: true,
+	const { data, isLoading, refetch } = useGetNewsQuery(currentFilter.query, {
+		pollingInterval: 60000,
+		skipPollingIfUnfocused: true,
 	})
 
 
